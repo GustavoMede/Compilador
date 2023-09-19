@@ -16,11 +16,10 @@ public class AnalisadorLexico {
         return Collections.unmodifiableList(listaTokens);
     }
 
-    public ArrayList<Token> analisaCodigo(String linha) {
+    public void analisaCodigo(String linha) {
         linha = removeComentarios(linha);
         linha = removeTabulacoes(linha);
         separaComandosPorEspaco(linha);
-        return listaTokens;
     }
 
     private String removeTabulacoes(String linha) {
