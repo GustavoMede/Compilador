@@ -9,6 +9,9 @@ public class AnalisadorLexico {
     private static final String ESPACOS_REGEX = "\\s+";
     private static final String TABULACAO_REGEX = "\t";
     private static final String STRING_VAZIA = "";
+    private static final String CLASSE_IDENTIFICADOR = "identificador";
+    private static final String CLASSE_CONSTANTE_LITERAL = "constante literal";
+    private static final String CLASSE_MARCADOR_FINAL = "$";
 
     private ArrayList<Token> listaTokens = new ArrayList<>();
 
@@ -93,12 +96,12 @@ public class AnalisadorLexico {
     private String classificaClasseToken(String token) {
         String classe = classesTokenHashMap.get(token);
         if (classe == null) {
-            return Character.isLetter(token.charAt(INICIO_STRING)) ? "identificador" : "constante literal";
+            return Character.isLetter(token.charAt(INICIO_STRING)) ? CLASSE_IDENTIFICADOR : CLASSE_CONSTANTE_LITERAL;
         }
         return classe;
     }
 
     public void adicionaMarcadorFinal() {
-        listaTokens.add(new Token(listaTokens.size() + 1, "$", "$"));
+        listaTokens.add(new Token(listaTokens.size() + 1, CLASSE_MARCADOR_FINAL, CLASSE_MARCADOR_FINAL));
     }
 }
