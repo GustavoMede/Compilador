@@ -1,19 +1,18 @@
 public class Token {
 
+    private int id;
     private String token;
 
-    private int linha;
+    private String classe;
 
-    private int coluna;
-
-    public Token(String token, int linha, int coluna) {
+    public Token(int id, String token, String classe) {
+        this.id = id;
         this.token = token;
-        this.linha = linha;
-        this.coluna = coluna;
+        this.classe = classe;
     }
 
     @Override
     public String toString() {
-        return "\nToken{" + token + ", " + linha + ", " + coluna + '}';
+        return "\nToken{" + id + ", " + token + ", " + classe + '}';
     }
 }

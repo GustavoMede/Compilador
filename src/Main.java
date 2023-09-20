@@ -16,6 +16,8 @@ public class Main {
             linha = leitor.readLine();
         }
 
+        analisadorLexico.adicionaMarcadorFinal();
+
         System.out.println(analisadorLexico.getListaTokens());
     }
 }
