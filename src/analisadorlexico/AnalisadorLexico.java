@@ -1,3 +1,7 @@
+package analisadorlexico;
+
+import model.Token;
+
 import java.util.*;
 
 public class AnalisadorLexico {

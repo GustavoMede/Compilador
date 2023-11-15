@@ -1,3 +1,6 @@
+import analisadorlexico.AnalisadorLexico;
+import analisadorsintatico.AnalisadorSintaticoGeradorArvore;
+
 import java.io.*;
 
 public class Main {
@@ -27,5 +30,17 @@ public class Main {
         analisadorLexico.adicionaMarcadorFinal();
 
         System.out.println(analisadorLexico.getListaTokens());
+
+        AnalisadorSintaticoGeradorArvore analisadorSintatico =
+                new AnalisadorSintaticoGeradorArvore(analisadorLexico.getListaTokens());
+        analisadorSintatico.analisar();
+        if (analisadorSintatico.temErros()) {
+            analisadorSintatico.printErros();
+            return;
+        }
+
+        System.out.println("\nMUITO BOM, ANÁLISE LÉXICA E SINTÁTICA OK!");
+
+        analisadorSintatico.mostraArvore(analisadorSintatico.getRaiz(), "", true);
     }
 }
