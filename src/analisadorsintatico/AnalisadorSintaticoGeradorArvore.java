@@ -9,8 +9,8 @@ import java.util.List;
 
 public class AnalisadorSintaticoGeradorArvore {
 
-	private List<Token> tokens = null;
-	private List<String> erros = new ArrayList<String>();
+	private final List<Token> tokens;
+	private final List<String> erros = new ArrayList<>();
 	private Token token = null;
 	private int pToken = 0;
 	private No raiz = null;
@@ -435,10 +435,9 @@ public class AnalisadorSintaticoGeradorArvore {
 		return novoNo;
 	}
 
-	private Token leToken() {
+	private void leToken() {
 		token = tokens.get(pToken);
 		pToken++;
-		return token;
 	}
 
 	public boolean temErros() {
@@ -447,7 +446,7 @@ public class AnalisadorSintaticoGeradorArvore {
 
 	public void printErros() {
 		System.out.println("Erros sintáticos:");
-		erros.forEach(e -> System.out.println(e));
+		erros.forEach(System.out::println);
 	}
 
 	public No getRaiz() {
