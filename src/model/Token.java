@@ -2,14 +2,10 @@ package model;
 
 public class Token {
 
-    private int id;
-    private String imagem;
+    private final int id;
+    private final String imagem;
 
-    private String classe;
-
-    public int getId() {
-        return id;
-    }
+    private final String classe;
 
     public String getImagem() {
         return imagem;

@@ -21,7 +21,7 @@ public class AnalisadorLexico {
     private static final String CLASSE_BOOLEANO_LITERAL = "booleano literal";
     private static final String CLASSE_MARCADOR_FINAL = "$";
 
-    private ArrayList<Token> listaTokens = new ArrayList<>();
+    private final ArrayList<Token> listaTokens = new ArrayList<>();
 
     private static final HashMap<String, String> classesTokenHashMap = new HashMap<>() {
         {
