@@ -9,12 +9,16 @@ public class AnalisadorLexico {
     private static final int INICIO_STRING = 0;
     private static final String CARACTER_COMENTARIO = "'";
     private static final String CARACTER_ESPACO = " ";
+    private static final String CARACTER_STRING = "\"";
     private static final int ESPACO_NAO_ENCONTRADO = -1;
     private static final String ESPACOS_REGEX = "\\s+";
     private static final String TABULACAO_REGEX = "\t";
     private static final String STRING_VAZIA = "";
     private static final String CLASSE_IDENTIFICADOR = "identificador";
-    private static final String CLASSE_CONSTANTE_LITERAL = "constante literal";
+    private static final String CLASSE_CADEIA_LITERAL = "cadeia literal";
+    private static final String CLASSE_INTEIRO_LITERAL = "inteiro literal";
+    private static final String CLASSE_REAL_LITERAL = "real literal";
+    private static final String CLASSE_BOOLEANO_LITERAL = "booleano literal";
     private static final String CLASSE_MARCADOR_FINAL = "$";
 
     private ArrayList<Token> listaTokens = new ArrayList<>();
@@ -100,9 +104,27 @@ public class AnalisadorLexico {
     private String classificaClasseToken(String token) {
         String classe = classesTokenHashMap.get(token);
         if (classe == null) {
-            return Character.isLetter(token.charAt(INICIO_STRING)) ? CLASSE_IDENTIFICADOR : CLASSE_CONSTANTE_LITERAL;
+            return classificaConstanteLiteral(token);
         }
         return classe;
+    }
+
+    private String classificaConstanteLiteral(String token) {
+        try {
+            Integer.valueOf(token);
+            return CLASSE_INTEIRO_LITERAL;
+        } catch (NumberFormatException integerException) {
+            try {
+                Float.valueOf(token);
+                return CLASSE_REAL_LITERAL;
+            } catch (NumberFormatException floatException) {
+                if (token.equals("true") || token.equals("false")) {
+                    return CLASSE_BOOLEANO_LITERAL;
+                } else {
+                    return token.startsWith(CARACTER_STRING) ? CLASSE_CADEIA_LITERAL : CLASSE_IDENTIFICADOR;
+                }
+            }
+        }
     }
 
     public void adicionaMarcadorFinal() {

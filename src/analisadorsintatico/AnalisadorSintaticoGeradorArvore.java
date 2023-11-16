@@ -159,7 +159,7 @@ public class AnalisadorSintaticoGeradorArvore {
 		No novoNo = new No(TipoNo.imprim);
 
 		if(token.getClasse().equals("identificador")
-				|| token.getClasse().equals("constante literal")) {
+				|| token.getClasse().equals("cadeia literal")) {
 			novoNo.addFilho(new No(token));
 			leToken();
 		} else {
@@ -219,7 +219,10 @@ public class AnalisadorSintaticoGeradorArvore {
 		No novoNo = new No(TipoNo.expr_arit);
 
 		if(token.getClasse().equals("identificador")
-				|| token.getClasse().equals("constante literal")
+				|| token.getClasse().equals("cadeia literal")
+				|| token.getClasse().equals("inteiro literal")
+				|| token.getClasse().equals("real literal")
+				|| token.getClasse().equals("booleano literal")
 		) {
 			novoNo.addFilho(operan());
 
@@ -266,7 +269,10 @@ public class AnalisadorSintaticoGeradorArvore {
 		No novoNo = new No(TipoNo.operan);
 
 		if(token.getClasse().equals("identificador")
-				|| token.getClasse().equals("constante literal")
+				|| token.getClasse().equals("cadeia literal")
+				|| token.getClasse().equals("inteiro literal")
+				|| token.getClasse().equals("real literal")
+				|| token.getClasse().equals("booleano literal")
 		) {
 			novoNo.addFilho(new No(token));
 			leToken();
@@ -314,7 +320,10 @@ public class AnalisadorSintaticoGeradorArvore {
 		No novoNo = new No(TipoNo.expr_rel);
 
 		if(token.getClasse().equals("identificador")
-				|| token.getClasse().equals("constante literal")
+				|| token.getClasse().equals("cadeia literal")
+				|| token.getClasse().equals("inteiro literal")
+				|| token.getClasse().equals("real literal")
+				|| token.getClasse().equals("booleano literal")
 		) {
 			novoNo.addFilho(operan());
 		} else if(token.getImagem().equals(">")
