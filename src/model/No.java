@@ -26,6 +26,18 @@ public class No {
 		return filhos;
 	}
 
+	public TipoNo getTipo() {
+		return tipo;
+	}
+
+	public No getFilho(int i) {
+		return this.getFilhos().get(i);
+	}
+
+	public Token getToken() {
+		return token;
+	}
+
 	@Override
 	public String toString() {
 		if(tipo == TipoNo.token) {

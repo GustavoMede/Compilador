@@ -1,0 +1,10 @@
+'Programa exemplo em Aportugueseido-V1
+'UC TCOMP Una 2023-2
+
+( inteiro a1 b1 )
+( real a1 )
+( real r1 )
+( imprime "oi mundo" )
+( cadeia s1 s2 )
+( = r1 "oi" )
+( = s1  ( . s2 " mundo" ) )

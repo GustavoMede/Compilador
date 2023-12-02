@@ -1,0 +1,7 @@
+'Programa exemplo em Aportugueseido-V1
+'UC TCOMP Una 2023-2
+
+( inteiro a1 b1 )
+( real r1 )
+( cadeia s1 )      'teste de comentarios
+( = s1 "oi" ) 
