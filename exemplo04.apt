@@ -1,3 +1,4 @@
 ( inteiro b1 )
 ( real a1 )
-( = b1 ( + 2 2 ) )
+( = a1 ( + 2.5 2.5 ) )
+( imprime a1 )

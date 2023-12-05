@@ -1,16 +1,13 @@
 package analisadorsemantico;
 
 import model.No;
-import model.TipoNo;
 import model.Token;
-import org.w3c.dom.ls.LSOutput;
 import tabelasimbolos.TabelaSimbolos;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static model.TipoNo.expr_arit;
 import static model.TipoNo.operan;
 
 @SuppressWarnings("unchecked")
