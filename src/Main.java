@@ -16,7 +16,7 @@ public class Main {
         Matheus Gigliotti Kassagas: ??
      */
     public static void main(String[] args) throws IOException {
-        File arquivo = new File("exemplo04.apt");
+        File arquivo = new File("exemplo02.apt");
 
         BufferedReader leitor = new BufferedReader(new FileReader(arquivo));
 
@@ -60,6 +60,8 @@ public class Main {
         }
 
         TabelaSimbolos.listaTabela();
+
+        System.out.println("\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= EXECUÇÃO DO PROGRAMA =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n");
 
         Interpretador interpretador = new Interpretador();
 
