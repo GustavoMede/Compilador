@@ -7,14 +7,7 @@ import tabelasimbolos.TabelaSimbolos;
 import java.io.*;
 
 public class Main {
-
-    /*
-        Gustavo Medeiros Coelho: 202012359,
-        Rafael Lizardo Pontes Borges: 202112347
-        Rodrigo José Modesto Costa: 202111464
-        Gustavo Silva Fernandes: 202110213
-        Matheus Gigliotti Kassagas: ??
-     */
+    
     public static void main(String[] args) throws IOException {
         File arquivo = new File("calculofatorial.apt");
 
