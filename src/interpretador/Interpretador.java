@@ -362,8 +362,8 @@ public class Interpretador {
 
     private Object subtraiOperandos(List<String> operandos) {
         try {
-            float resultado = 0;
-            int contador = 0;
+            float resultado = Float.parseFloat(operandos.get(0));
+            int contador = 1;
             while (contador < operandos.size()) {
                 resultado = resultado - Float.parseFloat(operandos.get(contador));
                 contador++;

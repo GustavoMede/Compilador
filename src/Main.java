@@ -16,7 +16,7 @@ public class Main {
         Matheus Gigliotti Kassagas: ??
      */
     public static void main(String[] args) throws IOException {
-        File arquivo = new File("exemplo02.apt");
+        File arquivo = new File("calculofatorial.apt");
 
         BufferedReader leitor = new BufferedReader(new FileReader(arquivo));
 
